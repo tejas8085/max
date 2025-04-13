@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.container {
+  padding: 16px;
+  background: white;
+}
+
+h2 {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.tabs {
+  justify-content: center; 
+  text-align: center;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.tabs span {
+  color: #666;
+  cursor: pointer;
+}
+
+.tabs .active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #000;
+}
+
+.product-list {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scroll-snap-type: x mandatory; 
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-card {
+  scroll-snap-align: start;
+  width: 20%;
+  min-width: 150px;
+  height: 250px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.product-card img {
+  width: 60%;
+  height: 150px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.product-card h3 {
+  font-size: 14px;
+  margin: 4px 0;
+  width: 100%;
+}
+
+.product-card p {
+  font-size: 12px;
+  margin: 2px 3px;
+}
+
+.price {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.new-price {
+  font-weight: bold;
+  color: #000;
+}
+
+.shop-now {
+  display: block;
+  width: 20%;
+  padding: 12px;
+  background: #1a3c72;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 40%;
+}
+
+.shop-now:hover {
+  background: #162f59;
+}
+
+
+@media (max-width: 1024px) {
+  .product-card {
+    width: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: 45%; 
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 12px;
+  }
+
+  .tabs {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .product-card img {
+    width: 80%;
+    height: 120px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    object-fit: cover;
+    object-position: top; 
+  }
+}
