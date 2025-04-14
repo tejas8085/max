@@ -9,7 +9,7 @@ const products = [
     color: "Black",
     oldPrice: "$188",
     newPrice: "$132",
-    image: "/images/shirt.jpg",
+    image: "/images/shirt1.jpg",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const products = [
     color: "Black",
     oldPrice: "$188",
     newPrice: "$132",
-    image: "/images/shirt.jpg",
+    image: "/images/shirt1.jpg",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const products = [
     color: "Black",
     oldPrice: "$188",
     newPrice: "$132",
-    image: "/images/shirt.jpg",
+    image: "/images/shirt1.jpg",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const products = [
     color: "Black",
     oldPrice: "$188",
     newPrice: "$132",
-    image: "/images/shirt.jpg",
+    image: "/images/shirt1.jpg",
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const products = [
     color: "Black",
     oldPrice: "$188",
     newPrice: "$132",
-    image: "/images/shirt.jpg",
+    image: "/images/shirt1.jpg",
   },
 ];
 
@@ -49,7 +49,7 @@ const Highlight = () => {
   return (
     <div className="container">
       {" "}
-      <h2>SHOP BY</h2> <h1>Our Highlights</h1>{" "}
+      <h6>SHOP BY</h6> <h1>Our Highlights</h1>{" "}
       <div  className="tabs">
         {" "}
         <span className="active">NEW ARRIVALS</span> <span>BEST SELLERS</span>{" "}
@@ -62,12 +62,14 @@ const Highlight = () => {
             {" "}
             
             <img src={product.image} alt={product.title} />{" "}
+            <div className="detail">
             <h3>{product.title}</h3> <p>{product.color}</p>{" "}
             <p className="price">
               {" "}
               <span className="old-price">{product.oldPrice}</span>{" "}
               <span className="new-price">{product.newPrice}</span>{" "}
             </p>{" "}
+            </div>
           </div>
         ))}{" "}
       </div>{" "}

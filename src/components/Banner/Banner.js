@@ -7,7 +7,7 @@ const Banner = () => {
       <div className="banner">
         <div className="banner-content">
           
-          {/* <button className="shop-btn">Shop Now</button> */}
+          <button className="shop-btn">Shop Now</button>
         </div>
 
       </div>

@@ -1,197 +1,150 @@
-.page {
-  padding-top: 10px;
+/* Base styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f0f0f0;
+}
+
+.flex-grid {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  gap: 20px;
+  /* padding-top: 1px; */
 }
 
-.flex-container {
+.grid-row {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap; 
+  width: 100%;
+  gap: 5px;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.grid-item9 {
+  position: relative;
+  height: 130px;
+  /* border-radius: 5px; */
+  overflow: hidden;
 }
-
-.box {
-  border-color: black;
-  border-radius: 2px;
-  border: black;
-  width: 280px; 
-  border-radius: 4px;
-  box-sizing: border-box; 
+.grid-item8 {
+  position: relative;
+  height: 100px;
+  /* border-radius: 5px; */
   overflow: hidden;
 }
 
-.upone {
-  height: 350px;
-  width: 400px;
-  border-color: black;
-  border-radius: 2px;
-  border: black;
-  width: 380px; 
-  border-radius: 4px;
-  box-sizing: border-box; 
-  overflow: hidden;
-}
-
-.upsec {
-  border-color: black;
-  border-radius: 2px;
-  border: black;
-  width: 280px; 
-  border-radius: 4px;
-  box-sizing: border-box; 
-  overflow: hidden;
-  height: 350px;
-  width: 300px;
-}
-
-.upsmall {
-  border-color: black;
-  border-radius: 2px;
-  border: black;
-  width: 380px; 
-  border-radius: 4px;
-  box-sizing: border-box; 
-  overflow: hidden;
-  height: 170px;
-  width: 300px;
-}
-
-.dowone {
-  height: 300px;
-  width: 500px;
-}
-
-.dowsec {
-  height: 300px;
-  width: 330px;
-}
-
-.dowsmall {
-  height: 145px;
-  width: 270px;
-}
-
-
-/* @media (max-width: 1200px) {
-  .upone, .dowone {
-    width: 450px; 
-  }
-
-  .upsec, .dowsec {
-    width: 220px; 
-  }
-
-  .upsmall, .dowsmall {
-    width: 320px; 
-  }
-
-  .flex-container {
-    flex-wrap: wrap; 
-    justify-content: center;
-  }
-} */
-
-@media (max-width: 768px) {
-  .upone, .dowone, .upsec, .dowsec, .upsmall, .dowsmall {
-    width: 100%;
-    height: auto; 
-  }
-
-  .page {
-    padding-top: 20px;
-  }
-
-  .flex-container {
-    flex-direction: column; 
-    gap: 20px;
-  }
-}
-
-
-@media (max-width: 480px) {
-  .upone, .dowone {
-    height: 250px; 
-  }
-
-  .upsec, .dowsec {
-    height: 200px;
-  }
-
-  .upsmall, .dowsmall {
-    height: 120px;
-  }
-
-  .page {
-    padding-top: 10px; 
-  }
-}
-
-
-.box img {
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-}
-
-.image-container {
+.image-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.image-container img {
+.image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-
-.overlay {
+.image-wrapper::before {
+  content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3, 3, 63, 0.6), rgba(0, 0, 255, 0.05));
+  z-index: 1;
+}
+
+
+.overlay-content {
+  position: absolute;
+  bottom: 10px;
+  left: 30%;
+  transform: translateX(-50%);
+  z-index: 2;
   color: white;
-  padding: 15px;
-  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+}
+
+.overlay-content h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+/* Smaller button on desktop */
+.overlay-content button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #074991;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Larger button on small screens */
+@media (max-width: 768px) {
+  .overlay-content button {
+    padding: 4px 10px;
+    font-size: 8px;
+  }
+}
+
+/* Grid Item Specific Widths */
+.grid-item1 {
+  flex: 0 0 45%;
+}
+
+.grid-item2 {
+  flex: 0 0 20%;
+}
+
+.grid-item3 {
+  flex: 0 0 35%;
+}
+
+.grid-item4 {
+  flex: 0 0 45%;
+}
+
+.grid-item5 {
+  flex: 0 0 28%;
+}
+
+.grid-item6 {
+  flex: 0 0 27%;
+}
+
+/* Split box styling for the two items inside */
+.split-vertical {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-
-  
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 80%);
+  gap: 5px;
+  height: 100%;
+  width: 100%;
 }
 
-
-.overlay h2 {
-  margin: 0 0 10px 0;
-  font-size: 1.2rem;
-  font-weight: bold;
+.split-box {
+  flex: 1;
+  /* border-radius: 10px; */
+  overflow: hidden;
 }
 
-
-.overlay button {
-  background-color: #f5c518;
-  border: none;
-  padding: 8px 16px;
-  color: #000;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+.split-box .image-wrapper {
+  position: relative;
 }
 
-.overlay button:hover {
-  background-color: #e3b610;
+.split-box .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Adding spacing between grids */
+.flex-grid > .grid-row {
+  margin-bottom: -15px;
 }

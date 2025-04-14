@@ -1,181 +1,133 @@
-.page {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+* {
+  box-sizing: border-box;
 }
 
-.label {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  background-color: rgba(6, 3, 61, 0.6);
-  color: white;
-  font-weight: bold;
-  padding: 5px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+body {
+  margin-top: 0;
+  font-family: Arial, sans-serif;
 }
 
-.flex-container {
+.grid {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding-top: 40px;
+  flex-direction: row;
+  height: 600px;
+  background: #eeeeee;
+  padding-top: 25px;
+  margin-left: -5px;
+  margin-right: -15px;
 }
 
 .column {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 9px;
+  padding: 5px;
+  min-width: 0; /* Prevent overflow on small screens */
 }
 
-.box {
-  border-radius: 4px;
-  width: 100%;
-  max-width: 380px;
-  box-sizing: border-box;
+.image-box {
+  position: relative;
+  flex: 1;
   overflow: hidden;
 }
 
-.upone {
-  height: 350px;
-  width: 290px;
-}
-
-.upsec {
-  height: 350px;
-  width: 260px;
-}
-
-.upsmall {
-  height: 170px;
-  width: 310px;
-}
-
-.dowone {
-  height: 300px;
-  width: 500px;
-}
-
-.dowsec {
-  height: 300px;
-  width: 330px;
-}
-
-.dowsmall {
-  height: 145px;
-  width: 270px;
-}
-
-
-@media (max-width: 1200px) {
-  .upone, .dowone {
-    width: 90%;
-  }
-
-  .upsec, .dowsec {
-    width: 85%;
-  }
-
-  .upsmall, .dowsmall {
-    width: 90%;
-  }
-
-  .flex-container {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .upone, .dowone, .upsec, .dowsec, .upsmall, .dowsmall {
-    width: 80%;
-    height: auto;
-  }
-
-  .page {
-    padding-top: 20px;
-  }
-
-  .flex-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .upone, .dowone {
-    height: 250px;
-  }
-
-  .upsec, .dowsec {
-    height: 200px;
-  }
-
-  .upsmall, .dowsmall {
-    height: 120px;
-  }
-
-  .page {
-    padding-top: 10px;
-  }
-}
-
-.box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.image-container img {
+.image-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.overlay {
+.label {
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
-  color: white;
-  padding: 15px;
-  box-sizing: border-box;
+  background: rgb(45, 45, 131);
+  color: #ffffff;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.column-text-image {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 80%);
+  gap: 9px;
 }
 
-.overlay h2 {
-  margin: 0 0 10px 0;
-  font-size: 1.2rem;
+.text-block {
+  flex: 0 0 35%;
+  /* background-color: #f0f0f0; */
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-block h1 {
+  margin: 0;
   font-weight: bold;
+  font-size: 17.5px;
 }
 
-.overlay button {
-  background-color: #f5c518;
-  border: none;
-  padding: 8px 16px;
-  color: #000;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+.text-block p {
+  margin-top: -28px;
+  /* margin-bottom: 28px; */
+  font-size: 16px;
+  color: #444;
+  letter-spacing: 1px;
+
 }
 
-.overlay button:hover {
-  background-color: #e3b610;
+.shirt-3 {
+  flex: 0 0 62%;
+}
+
+.column.multi .image-box {
+  flex: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: row; /* Keep 3 columns */
+    height: 400px; /* Reduce height on smaller screens */
+  }
+
+  .text-block h2 {
+    font-size: 14px;
+  }
+
+  .text-block p {
+    font-size: 12px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    height: 300px; /* Even smaller for tiny devices */
+  }
+
+  .text-block {
+    padding: 10px;
+  }
+
+  .text-block h2 {
+    font-size: 15px;
+  }
+
+  .text-block p {
+    font-size: 10px;
+  }
+
+  .label {
+    font-size: 15px;
+  }
 }

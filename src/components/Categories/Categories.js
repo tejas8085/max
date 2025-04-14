@@ -3,35 +3,55 @@ import "./Categories.css";
 
 const Categories = () => {
   return (
-    <div className="container">
-      
-      <div className="shop-the-look">
-        <h3>EXPLORE</h3>
-        <h2>Shop The Look</h2>
-        <div className="look-section">
-          <div className="look-image">
-            <img src="/images/model.jpeg" alt="Model Look" />
-          </div>
-          <div className="products">
-            <div className="product">
-              <img src="/images/shirt.jpg" alt="Cardigan" />
-              <p>The Cloud Relaxed Cardigan</p>
-              <div className="price">
-                <span className="old-price">$188</span>
-                <span className="new-price">$132</span>
-              </div>
-            </div>
-            <div className="product">
-              <img src="/images/shirt.jpg" alt="Cardigan" />
-              <p>The Cloud Relaxed Cardigan</p>
-              <div className="price">
-                <span className="old-price">$188</span>
-                <span className="new-price">$132</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="shop-the-look-container">
+      {" "}
+      <h4 className="explore-text">EXPLORE</h4>{" "}
+      <h1 className="shop-title">Shop The Look</h1>{" "}
+      <div className="shop-content">
+        {" "}
+        <div className="main-image">
+          {" "}
+          <img
+            src="/images/girl.jpg"
+            alt="Model Look"
+            className="model-image"
+          />{" "}
+          
+        </div>{" "}
+        <div className="items-section">
+          {" "}
+          <div className="item-card">
+            {" "}
+            <img
+              src="/images/shirt1.jpg"
+              alt="Blue T-Shirt"
+              className="item-image"
+            />{" "}
+            <div className="item-details">
+              {" "}
+              <p className="item-name">The Cloud Relaxed Cardigan</p>{" "}
+              <p className="item-price">
+                <s>$188</s> $132
+              </p>{" "}
+            </div>{" "}
+          </div>{" "}
+          <div className="item-card">
+            {" "}
+            <img
+              src="/images/shirt1.jpg"
+              alt="Black Cardigan"
+              className="item-image"
+            />{" "}
+            <div className="item-details">
+              {" "}
+              <p className="item-name">The Cloud Relaxed Cardigan</p>{" "}
+              <p className="item-price">
+                <s>$188</s> $132
+              </p>{" "}
+            </div>{" "}
+          </div>{" "}
+        </div>{" "}
+      </div>{" "}
     </div>
   );
 };
